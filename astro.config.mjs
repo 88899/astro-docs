@@ -8,6 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'AiEDU | DOCS',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/88899/astro-docs' }],
+
 			sidebar: [
 				{
 					label: '指南',
