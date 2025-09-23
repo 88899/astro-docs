@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'AiEDU | DOCS',
+			title: '',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/88899/astro-docs' }],
 			sidebar: [
 				{
@@ -21,20 +21,12 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 			],
+			logo: {
+				light: './src/assets/light.png', // 亮色模式 Logo
+				dark: './src/assets/dark.png', // 暗色模式 Logo
+				alt: 'Your Site Name', // 替代文本
+
+			},
 		}),
 	],
-	shikiConfig: {
-		theme: 'dracula',
-	},
-	theme: {
-    	// 更换 Logo
-		logo: {
-		// 亮色模式 Logo（默认显示）
-		light: 'assets/light.png',
-		// 暗色模式 Logo（切换暗色主题时显示）
-		dark: 'assets/dark.png',
-		// Logo 图片的 alt 文本（必填，用于 accessibility）
-		alt: 'AiEDU | DOCS',
-	},
-  },
 });
