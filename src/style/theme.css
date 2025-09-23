@@ -1,11 +1,11 @@
 /* 覆盖 Starlight 主题的颜色变量，设置为绿色系 */
 :root {
   /* 主色调（绿色）- 用于按钮、链接、标题等核心元素 */
-  --sl-color-primary: #16a34a; /* 基础绿色 */
+  --sl-color-primary: #16813d; /* 基础绿色 */
   --sl-color-primary-light: #75f4a4; /* 浅一点的绿色（hover状态） */
   --sl-color-primary-dark: #27ae60; /* 深一点的绿色（激活状态） */
 
-  --sl-color-text-accent: #16a34a; /* 深绿色，用于强调文本 */
+  --sl-color-text-accent: #16813d; /* 深绿色，用于强调文本 */
   /* 辅助色（可选，用于强调和交互） */
   --sl-color-accent: #1abc9c; /* 青绿色 */
 
@@ -17,7 +17,7 @@
 /* 暗色模式下的绿色主题（可选） */
 @media (prefers-color-scheme: dark) {
   :root {
-    --sl-color-primary: #16a34a;
+    --sl-color-primary: #16813d;
     --sl-color-primary-light: #75f4a4;
     --sl-color-primary-dark: #1e8449;
     --sl-color-text: #f5f5f5;
