@@ -27,7 +27,7 @@ export default defineConfig({
 				alt: 'AiEDU|DOCS', // 替代文本
 
 			},
-			customCss: ['./src/style/global.css'],
+			customCss: ['./src/style/global.css','./src/style/theme.css'],
 		}),
 	],
 });
