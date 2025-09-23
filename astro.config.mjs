@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: '',
+			title: 'AiEDU | DOCS',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/88899/astro-docs' }],
 			sidebar: [
 				{
@@ -24,9 +24,10 @@ export default defineConfig({
 			logo: {
 				light: './src/assets/light.png', // 亮色模式 Logo
 				dark: './src/assets/dark.png', // 暗色模式 Logo
-				alt: 'Your Site Name', // 替代文本
+				alt: 'AiEDU|DOCS', // 替代文本
 
 			},
+			customCss: ['./src/style/global.css'],
 		}),
 	],
 });
