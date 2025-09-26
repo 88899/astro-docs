@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightOpenAPI, { openAPISidebarGroups } from 'starlight-openapi'
 
 // https://astro.build/config
 export default defineConfig({
@@ -36,16 +37,17 @@ export default defineConfig({
 			favicon: '/favicon.svg',
 			sidebar: [
 				{
-					label: '指南',
+					label: '快速开始',
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'About', slug: 'aiedu/about' },
 					],
 				},
 				{
-					label: '接口文档',
+					label: '指南',
 					autogenerate: { directory: 'reference' },
 				},
+				...openAPISidebarGroups,
 			],
 			logo: {
 				light: './src/assets/light.png', // 亮色模式 Logo
@@ -55,6 +57,25 @@ export default defineConfig({
 
 			},
 			customCss: ['./src/style/global.css','./src/style/theme.css'],
+			plugins: [
+				// Generate the OpenAPI documentation pages.
+				starlightOpenAPI([
+					{
+						base: 'api/',
+						schema: './src/schema/openapi.json',
+						sidebar: {
+							label: '用户管理',
+						},
+					},
+					{
+						base: 'resource/',
+						schema: './src/schema/openapi.json',
+						sidebar: {
+							label: '资源管理',
+						},
+					},
+				]),
+			],
 		}),
 	],
 });

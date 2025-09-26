@@ -1,0 +1,154 @@
+---
+// 顶部导航栏组件，使用图标作为菜单项
+---
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b shadow-sm">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-16">
+      <!-- 网站Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+        <span class="text-xl font-bold text-gray-800">MyApp</span>
+      </a>
+
+      <!-- 桌面端图标导航 -->
+      <ul class="hidden md:flex items-center space-x-1">
+        <!-- 首页 -->
+        <li>
+          <a
+            href="/"
+            class="flex flex-col items-center justify-center p-3 rounded-full transition-all hover:bg-green-50 hover:text-green-600"
+            aria-label="首页"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </a>
+        </li>
+
+        <!-- 博客 -->
+        <li>
+          <a
+            href="/blog"
+            class="flex flex-col items-center justify-center p-3 rounded-full transition-all hover:bg-green-50 hover:text-green-600"
+            aria-label="博客"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </a>
+        </li>
+
+        <!-- 文档 -->
+        <li>
+          <a
+            href="/docs"
+            class="flex flex-col items-center justify-center p-3 rounded-full transition-all hover:bg-green-50 hover:text-green-600"
+            aria-label="文档"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+          </a>
+        </li>
+
+        <!-- API文档 -->
+        <li>
+          <a
+            href="/api-docs"
+            class="flex flex-col items-center justify-center p-3 rounded-full transition-all hover:bg-green-50 hover:text-green-600"
+            aria-label="API文档"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19l6-6 2 2-6 6-2-2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14"></path>
+            </svg>
+          </a>
+        </li>
+
+        <!-- 关于 -->
+        <li>
+          <a
+            href="/about"
+            class="flex flex-col items-center justify-center p-3 rounded-full transition-all hover:bg-green-50 hover:text-green-600"
+            aria-label="关于"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- 移动端菜单按钮 -->
+      <button
+        class="md:hidden p-2 rounded-md text-gray-600 hover:text-green-600 hover:bg-green-50"
+        aria-label="打开菜单"
+        id="mobile-menu-button"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- 移动端菜单 -->
+  <div class="md:hidden hidden bg-white border-t" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a href="/" class="block px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-600">首页</a>
+      <a href="/blog" class="block px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-600">博客</a>
+      <a href="/docs" class="block px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-600">文档</a>
+      <a href="/api-docs" class="block px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-600">API文档</a>
+      <a href="/about" class="block px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-600">关于</a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  // 移动端菜单切换逻辑
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+    // 切换图标（汉堡/关闭）
+    const svg = menuButton.querySelector('svg');
+    if (mobileMenu?.classList.contains('hidden')) {
+      svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+      menuButton.setAttribute('aria-label', '打开菜单');
+    } else {
+      svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+      menuButton.setAttribute('aria-label', '关闭菜单');
+    }
+  });
+
+  // 当前页面导航项高亮
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+      // 首页特殊处理
+      if ((currentPath === '/' && linkPath === '/') ||
+          (currentPath.startsWith(linkPath) && linkPath !== '/')) {
+        link.classList.add('text-green-600', 'bg-green-50');
+      }
+    });
+  });
+</script>
+
+<style>
+  /* 基础样式补充 */
+  header a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* 平滑过渡效果 */
+  header * {
+    transition: all 0.2s ease;
+  }
+</style>

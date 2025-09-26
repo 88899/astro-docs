@@ -1,0 +1,41 @@
+---
+// 全局布局：所有页面共享此布局，确保导航栏全局显示在顶部
+import Header from '../components/Header.astro';
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{ Astro.props.title || "我的网站" }</title>
+    <!-- 引入 Font Awesome 图标（确保图标可用） -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+    >
+    <!-- 基础样式：防止内容被导航栏遮挡 -->
+    <style>
+      /* 确保页面默认样式正确 */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { min-height: 100vh; }
+      /* 内容区添加顶部间距，避免被导航栏覆盖 */
+      .page-content { padding-top: 60px; }
+    </style>
+  </head>
+  <body>
+    <!-- 导航栏：固定在顶部，脱离内容流 -->
+    <Header />
+
+    <!-- 内容区：单独的容器，与导航分离 -->
+    <main class="page-content container mx-auto px-4 py-8">
+      <slot /> <!-- 页面具体内容插入这里 -->
+    </main>
+
+    <!-- 页脚（可选） -->
+    <footer class="bg-gray-100 py-6 mt-auto">
+      <div class="container mx-auto px-4 text-center text-gray-600">
+        © {new Date().getFullYear()} 我的网站
+      </div>
+    </footer>
+  </body>
+</html>

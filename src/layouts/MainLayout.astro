@@ -1,0 +1,30 @@
+---
+// 主布局文件，引入Header组件
+import Header from '../components/Header.astro';
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{ Astro.props.title || "我的网站" }</title>
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- 引入导航栏 -->
+    <Header />
+
+    <!-- 页面内容 -->
+    <main class="container mx-auto px-4 py-8">
+      <slot />
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-50 border-t py-6">
+      <div class="container mx-auto px-4 text-center text-gray-600">
+        <p>© { new Date().getFullYear() } 我的网站. 保留所有权利.</p>
+      </div>
+    </footer>
+  </body>
+</html>
